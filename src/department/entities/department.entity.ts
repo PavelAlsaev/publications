@@ -2,7 +2,6 @@ import { Faculty } from 'src/faculty/entities/faculty.entity';
 import {
   Column,
   Entity,
-  JoinColumn,
   JoinTable,
   ManyToOne,
   PrimaryGeneratedColumn,
