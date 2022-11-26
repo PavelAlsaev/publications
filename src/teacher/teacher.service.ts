@@ -13,9 +13,9 @@ export class TeacherService {
   ) {}
 
   async create(createTeacherDto: CreateTeacherDto) {
-    const department = this.teacherRepository.create(createTeacherDto);
+    const teacher = this.teacherRepository.create(createTeacherDto);
     await this.teacherRepository.save(createTeacherDto);
-    return department;
+    return teacher;
   }
 
   async findAll() {

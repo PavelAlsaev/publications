@@ -6,6 +6,7 @@ import { FacultyModule } from './faculty/faculty.module';
 import { DepartmentModule } from './department/department.module';
 import { TeacherModule } from './teacher/teacher.module';
 import { PublishingHouseModule } from './publishing-house/publishing-house.module';
+import { EditionModule } from './edition/edition.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { PublishingHouseModule } from './publishing-house/publishing-house.modul
     DepartmentModule,
     TeacherModule,
     PublishingHouseModule,
+    EditionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
