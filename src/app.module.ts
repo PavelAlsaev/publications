@@ -8,6 +8,7 @@ import { TeacherModule } from './teacher/teacher.module';
 import { PublishingHouseModule } from './publishing-house/publishing-house.module';
 import { EditionModule } from './edition/edition.module';
 import { TeacherEditionModule } from './teacher-edition/teacher-edition.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { TeacherEditionModule } from './teacher-edition/teacher-edition.module';
     PublishingHouseModule,
     EditionModule,
     TeacherEditionModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
