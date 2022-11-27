@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="p-5">
+    <h1 class="text-center py-2">Издательства</h1>
+    <main class="container d-flex flex-column gap-3">
+      <button
+        id="create"
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Создать
+      </button>
+      <button
+        id="createEdition"
+        style="display: none"
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal3"
+      >
+        Создать
+      </button>
+      <div class="wrapper w-100 d-flex flex-column gap-3"></div>
+
+      <button id="back" class="btn btn-danger">Назад</button>
+    </main>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Создание издательства
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Название</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Адрес</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Создать</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Обновление издательства
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Название</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="uname"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Адрес</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="uaddress"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Обновить</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+    class="modal fade"
+    id="exampleModal3"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Создание издания
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="udc" class="form-label">УДК</label>
+              <input
+                type="text"
+                class="form-control"
+                id="udc"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="name-edition" class="form-label">Название</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name-edition"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="type" class="form-label">Тип</label>
+              <input
+                type="text"
+                class="form-control"
+                id="type"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="autor" class="form-label">Автор</label>
+              <input
+                type="text"
+                class="form-control"
+                id="autor"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="countOfPages" class="form-label">Количество страниц</label>
+              <input
+                type="number"
+                class="form-control"
+                id="countOfPages"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="countOfTables" class="form-label">Количество таблиц</label>
+              <input
+                type="number"
+                class="form-control"
+                id="countOfTables"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="teacher" class="form-label">Преподаватель</label>
+              <select
+                class="form-control"
+                id="teacher"
+                aria-describedby="emailHelp"
+              >
+            </select>
+            </div>
+            <div class="mb-3">
+              <label for="contribution" class="form-label">Вклад</label>
+              <input
+                type="text"
+                class="form-control"
+                id="contribution"
+                aria-describedby="emailHelp"
+              >
+            </select>
+            </div>
+            <div class="mb-3">
+              <label for="countOfDrawnings" class="form-label">Количество рисунок</label>
+              <input
+                type="number"
+                class="form-control"
+                id="countOfDrawnings"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="year" class="form-label">Год издания</label>
+              <input
+                type="number"
+                class="form-control"
+                id="year"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="nameAnnotation" class="form-label">Год публикации аннотации</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nameAnnotation"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="annotationArticle" class="form-label">Аннотация для статьи</label>
+              <input
+                type="text"
+                class="form-control"
+                id="annotationArticle"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="annotationThesis" class="form-label">Аннотация для тезиса</label>
+              <input
+                type="text"
+                class="form-control"
+                id="annotationThesis"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="yearOfPublicationAnnotation" class="form-label">Год публикации анноатции</label>
+              <input
+                type="text"
+                class="form-control"
+                id="yearOfPublicationAnnotation"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Предметная область</label>
+              <input
+                type="text"
+                class="form-control"
+                id="subject"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Создать</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div
+    class="modal fade"
+    id="exampleModal4"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Создание издания
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="uudc" class="form-label">УДК</label>
+              <input
+                type="text"
+                class="form-control"
+                id="uudc"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="uname-edition" class="form-label">Название</label>
+              <input
+                type="text"
+                class="form-control"
+                id="uname-edition"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="utype" class="form-label">Тип</label>
+              <input
+                type="text"
+                class="form-control"
+                id="utype"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="uautor" class="form-label">Автор</label>
+              <input
+                type="text"
+                class="form-control"
+                id="uautor"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="ucountOfPages" class="form-label">Количество страниц</label>
+              <input
+                type="number"
+                class="form-control"
+                id="ucountOfPages"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="uteacher" class="form-label">Преподаватель</label>
+              <select
+                class="form-control"
+                id="uteacher"
+                aria-describedby="emailHelp"
+              >
+            </select>
+            </div>
+            <div class="mb-3">
+              <label for="ucontribution" class="form-label">Вклад</label>
+              <input
+                type="text"
+                class="form-control"
+                id="ucontribution"
+                aria-describedby="emailHelp"
+              >
+            </select>
+            </div>
+            <div class="mb-3">
+              <label for="ucountOfTables" class="form-label">Количество таблиц</label>
+              <input
+                type="number"
+                class="form-control"
+                id="ucountOfTables"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="ucountOfDrawnings" class="form-label">Количество рисунок</label>
+              <input
+                type="number"
+                class="form-control"
+                id="ucountOfDrawnings"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="uyear" class="form-label">Год издания</label>
+              <input
+                type="number"
+                class="form-control"
+                id="uyear"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="unameAnnotation" class="form-label">Год публикации аннотации</label>
+              <input
+                type="text"
+                class="form-control"
+                id="unameAnnotation"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="uannotationArticle" class="form-label">Аннотация для статьи</label>
+              <input
+                type="text"
+                class="form-control"
+                id="uannotationArticle"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="uannotationThesis" class="form-label">Аннотация для тезиса</label>
+              <input
+                type="text"
+                class="form-control"
+                id="uannotationThesis"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="uyearOfPublicationAnnotation" class="form-label">Год публикации анноатции</label>
+              <input
+                type="text"
+                class="form-control"
+                id="uyearOfPublicationAnnotation"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="usubject" class="form-label">Предметная область</label>
+              <input
+                type="text"
+                class="form-control"
+                id="usubject"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Создать</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script type="module" src="./edition.js"></script>
+  </body>
+</html>

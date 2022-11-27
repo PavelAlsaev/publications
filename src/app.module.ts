@@ -9,6 +9,8 @@ import { PublishingHouseModule } from './publishing-house/publishing-house.modul
 import { EditionModule } from './edition/edition.module';
 import { TeacherEditionModule } from './teacher-edition/teacher-edition.module';
 import { UserModule } from './user/user.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -21,6 +23,9 @@ import { UserModule } from './user/user.module';
       database: 'Publications',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'client'),
     }),
     FacultyModule,
     DepartmentModule,
