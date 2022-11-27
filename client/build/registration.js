@@ -1,7 +1,7 @@
 (() => {
   // scripts/config.js
   var CONFIG = {
-    rootApi: "http://localhost:3000"
+    rootApi: "http://92.63.101.204:3000"
   };
   var config_default = CONFIG;
 
