@@ -13,21 +13,21 @@ export class TeacherEditionService {
   ) {}
 
   async create(createTeacherDto: CreateTeacherEditionDto) {
-    const teacher = this.teacherRepository.create(createTeacherDto);
-    await this.teacherRepository.save(createTeacherDto);
+    let teacher = this.teacherRepository.create(createTeacherDto);
+    teacher = await this.teacherRepository.save(createTeacherDto);
     return teacher;
   }
 
   async findAll() {
     return await this.teacherRepository.find({
-      relations: ['teacher', 'edition'],
+      relations: ['teacher', 'teacher.department', 'edition'],
     });
   }
 
   async findOne(id: number) {
     return await this.teacherRepository.findOne({
       where: { id },
-      relations: ['teacher', 'edition'],
+      relations: ['teacher', 'teacher.department', 'edition'],
     });
   }
 
@@ -35,7 +35,7 @@ export class TeacherEditionService {
     await this.teacherRepository.update({ id }, updateTeacherDto);
     return await this.teacherRepository.findOne({
       where: { id },
-      relations: ['teacher', 'edition'],
+      relations: ['teacher', 'teacher.department', 'edition'],
     });
   }
 

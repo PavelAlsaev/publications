@@ -13,8 +13,8 @@ export class EditionService {
   ) {}
 
   async create(createEditionDto: CreateEditionDto) {
-    const edition = this.editionRepository.create(createEditionDto);
-    await this.editionRepository.save(createEditionDto);
+    let edition = this.editionRepository.create(createEditionDto);
+    edition = await this.editionRepository.save(createEditionDto);
     return edition;
   }
 

@@ -13,11 +13,11 @@ export class TeacherEdition {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Teacher)
+  @ManyToOne(() => Teacher, { onDelete: 'CASCADE' })
   @JoinTable()
   teacher: Teacher;
 
-  @ManyToOne(() => Edition)
+  @ManyToOne(() => Edition, { onDelete: 'CASCADE' })
   @JoinTable()
   edition: Edition;
 

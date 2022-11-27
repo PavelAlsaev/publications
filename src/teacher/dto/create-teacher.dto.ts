@@ -1,8 +1,8 @@
-import { Department } from 'src/department/entities/department.entity';
+import { CreateDepartmentDto } from 'src/department/dto/create-department.dto';
 
 export class CreateTeacherDto {
   id: number;
-  department: Department;
+  department: CreateDepartmentDto;
   serviceNumber: string;
   position: string;
   name: string;

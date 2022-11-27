@@ -12,7 +12,7 @@ export class Teacher {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Department)
+  @ManyToOne(() => Department, { onDelete: 'CASCADE' })
   @JoinTable()
   department: Department;
 

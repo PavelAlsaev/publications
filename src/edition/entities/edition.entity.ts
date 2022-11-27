@@ -1,3 +1,4 @@
+import { Cipher } from 'crypto';
 import { PublishingHouse } from 'src/publishing-house/entities/publishing-house.entity';
 import {
   Column,
@@ -18,6 +19,12 @@ export class Edition {
 
   @Column({ unique: true })
   udc: string;
+
+  @Column()
+  name: string;
+
+  @Column()
+  type: string;
 
   @Column()
   autor: string;

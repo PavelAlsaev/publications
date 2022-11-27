@@ -4,6 +4,7 @@ export class CreateEditionDto {
   id: number;
   publishingHouse: PublishingHouse;
   udc: string;
+  name: string;
   autor: string;
   countOfPages: number;
   countOfTables: number;
@@ -14,4 +15,5 @@ export class CreateEditionDto {
   yearOfPublicationAnnotation: number;
   subject: string;
   nameAnnotation: string;
+  type: string;
 }
